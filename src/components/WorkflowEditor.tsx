@@ -133,11 +133,17 @@ const WorkflowEditor = () => {
           type: 'smoothstep',
           style: { strokeWidth: 2 },
         }}
+        className="bg-slate-50"
       >
-        <Background variant="dots" gap={12} size={1} />
-        <Controls />
-        <MiniMap nodeStrokeWidth={3} zoomable pannable />
-        <Panel position="top-left" className="bg-white p-2 rounded-md shadow-md">
+        <Background variant="dots" gap={12} size={1} color="#e2e8f0" />
+        <Controls className="bg-white border border-slate-200 rounded-md shadow-sm" />
+        <MiniMap 
+          nodeStrokeWidth={3} 
+          zoomable 
+          pannable 
+          className="bg-white border border-slate-200 rounded-md shadow-sm"
+        />
+        <Panel position="top-left" className="bg-white p-3 rounded-md shadow-md border border-slate-200">
           <NodeSelector />
         </Panel>
       </ReactFlow>
