@@ -12,7 +12,6 @@ import {
   Connection,
   Edge,
   MarkerType,
-  BackgroundVariant,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useToast } from './ui/use-toast';

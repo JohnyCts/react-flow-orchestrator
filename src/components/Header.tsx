@@ -1,32 +1,34 @@
 
 import React from 'react';
-import { FileDown, FileUp, Plus, Save, Workflow } from 'lucide-react';
+import { FileDown, FileUp, Save, Workflow, Bot, Plus } from 'lucide-react';
 import { Button } from './ui/button';
 
 export const Header = () => {
   return (
-    <header className="border-b border-slate-200 bg-white p-4 shadow-sm">
+    <header className="border-b border-slate-200 bg-white py-4 px-6 shadow-sm">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Workflow className="h-6 w-6 text-indigo-600" />
+          <div className="bg-blue-600 text-white p-1.5 rounded-md">
+            <Bot className="h-5 w-5" />
+          </div>
           <h1 className="text-xl font-bold text-slate-800">Workflow Builder</h1>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="flex items-center gap-1 text-slate-700">
-            <FileUp size={16} />
-            <span>Import</span>
+        <div className="flex items-center gap-3">
+          <Button variant="outline" size="sm" className="text-slate-700">
+            <FileUp size={16} className="mr-1" />
+            Import
           </Button>
-          <Button variant="outline" size="sm" className="flex items-center gap-1 text-slate-700">
-            <FileDown size={16} />
-            <span>Export</span>
+          <Button variant="outline" size="sm" className="text-slate-700">
+            <FileDown size={16} className="mr-1" />
+            Export
           </Button>
-          <Button variant="outline" size="sm" className="flex items-center gap-1 text-slate-700">
-            <Save size={16} />
-            <span>Save</span>
+          <Button variant="outline" size="sm" className="text-slate-700">
+            <Save size={16} className="mr-1" />
+            Save
           </Button>
-          <Button size="sm" className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700">
-            <Plus size={16} />
-            <span>New Node</span>
+          <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+            <Plus size={16} className="mr-1" />
+            New Node
           </Button>
         </div>
       </div>

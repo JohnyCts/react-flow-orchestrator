@@ -7,17 +7,75 @@ type NodeType = {
   name: string;
   icon: React.ElementType;
   color: string;
+  bgColor: string;
+  borderColor: string;
 };
 
 const nodeTypes: NodeType[] = [
-  { type: 'startNode', name: 'Start', icon: CirclePlay, color: 'bg-green-100 border-green-300 text-green-700' },
-  { type: 'taskNode', name: 'Task', icon: Box, color: 'bg-blue-100 border-blue-300 text-blue-700' },
-  { type: 'decisionNode', name: 'Decision', icon: Activity, color: 'bg-purple-100 border-purple-300 text-purple-700' },
-  { type: 'emailNode', name: 'Email', icon: Mail, color: 'bg-sky-100 border-sky-300 text-sky-700' },
-  { type: 'timerNode', name: 'Timer', icon: Clock, color: 'bg-amber-100 border-amber-300 text-amber-700' },
-  { type: 'dataNode', name: 'Data', icon: Database, color: 'bg-teal-100 border-teal-300 text-teal-700' },
-  { type: 'userNode', name: 'User', icon: User, color: 'bg-pink-100 border-pink-300 text-pink-700' },
-  { type: 'endNode', name: 'End', icon: CircleOff, color: 'bg-red-100 border-red-300 text-red-700' },
+  { 
+    type: 'startNode', 
+    name: 'Start', 
+    icon: CirclePlay, 
+    color: 'text-emerald-600', 
+    bgColor: 'bg-emerald-50', 
+    borderColor: 'border-emerald-200'
+  },
+  { 
+    type: 'taskNode', 
+    name: 'Task', 
+    icon: Box, 
+    color: 'text-indigo-600', 
+    bgColor: 'bg-indigo-50', 
+    borderColor: 'border-indigo-200'
+  },
+  { 
+    type: 'decisionNode', 
+    name: 'Decision', 
+    icon: Activity, 
+    color: 'text-purple-600', 
+    bgColor: 'bg-purple-50', 
+    borderColor: 'border-purple-200'
+  },
+  { 
+    type: 'emailNode', 
+    name: 'Email', 
+    icon: Mail, 
+    color: 'text-blue-600', 
+    bgColor: 'bg-blue-50', 
+    borderColor: 'border-blue-200'
+  },
+  { 
+    type: 'timerNode', 
+    name: 'Timer', 
+    icon: Clock, 
+    color: 'text-amber-600', 
+    bgColor: 'bg-amber-50', 
+    borderColor: 'border-amber-200'
+  },
+  { 
+    type: 'dataNode', 
+    name: 'Data', 
+    icon: Database, 
+    color: 'text-teal-600', 
+    bgColor: 'bg-teal-50', 
+    borderColor: 'border-teal-200'
+  },
+  { 
+    type: 'userNode', 
+    name: 'User', 
+    icon: User, 
+    color: 'text-pink-600', 
+    bgColor: 'bg-pink-50', 
+    borderColor: 'border-pink-200'
+  },
+  { 
+    type: 'endNode', 
+    name: 'End', 
+    icon: CircleOff, 
+    color: 'text-rose-600', 
+    bgColor: 'bg-rose-50', 
+    borderColor: 'border-rose-200'
+  },
 ];
 
 export const NodeSelector = () => {
@@ -28,18 +86,18 @@ export const NodeSelector = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <p className="text-sm font-medium text-slate-700 mb-1">Add Nodes</p>
+    <div className="flex flex-col gap-3">
+      <p className="text-sm font-semibold text-slate-700 mb-1">Add Nodes</p>
       <div className="grid grid-cols-2 gap-2">
         {nodeTypes.map((node) => (
           <div
             key={node.type}
-            className={`cursor-grab p-2 rounded border ${node.color} flex items-center gap-2 hover:shadow-md transition-shadow duration-200`}
+            className={`cursor-grab p-2 rounded-lg ${node.bgColor} ${node.borderColor} border flex items-center gap-2 hover:shadow-md transition-all duration-200 hover:translate-y-[-2px]`}
             onDragStart={(event) => onDragStart(event, node.type, node.name)}
             draggable
           >
-            <node.icon size={16} />
-            <span className="text-sm font-medium">{node.name}</span>
+            <node.icon size={16} className={node.color} />
+            <span className="text-sm font-medium text-gray-700">{node.name}</span>
           </div>
         ))}
       </div>
