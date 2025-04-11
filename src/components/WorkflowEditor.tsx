@@ -12,6 +12,7 @@ import {
   Connection,
   Edge,
   MarkerType,
+  BackgroundVariant,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useToast } from './ui/use-toast';
@@ -20,6 +21,10 @@ import TaskNode from './nodes/TaskNode';
 import DecisionNode from './nodes/DecisionNode';
 import StartNode from './nodes/StartNode';
 import EndNode from './nodes/EndNode';
+import EmailNode from './nodes/EmailNode';
+import TimerNode from './nodes/TimerNode';
+import DataNode from './nodes/DataNode';
+import UserNode from './nodes/UserNode';
 
 // Initial nodes and edges
 const initialNodes = [
@@ -39,6 +44,10 @@ const nodeTypes = {
   decisionNode: DecisionNode,
   startNode: StartNode,
   endNode: EndNode,
+  emailNode: EmailNode,
+  timerNode: TimerNode,
+  dataNode: DataNode,
+  userNode: UserNode,
 };
 
 const WorkflowEditor = () => {
